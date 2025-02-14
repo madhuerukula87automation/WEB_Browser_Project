@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Opera Test">
+        <parameter name="browser" value="brave"/>
+        <classes>
+            <class name="com.naukari.test_cases.user_side.Test_1_Naukari_Tests"/>
+        </classes>
+    </test>
+</suite> <!-- Suite -->

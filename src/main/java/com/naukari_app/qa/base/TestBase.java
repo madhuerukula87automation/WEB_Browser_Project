@@ -18,6 +18,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -75,10 +77,22 @@ public class TestBase {
 		}
 	}
 
-	@SuppressWarnings("static-access")
+//	@BeforeMethod
+//	public void initialization() throws InterruptedException {
+//		String browserName = prop.getProperty("Browser");
+
+	@Parameters("browser")
 	@BeforeMethod
-	public void initialization() throws InterruptedException {
-		String browserName = prop.getProperty("Browser");
+	// public void initialization(@Optional("chrome") String browserName) throws
+	// InterruptedException { use this by defult open chrome only
+
+	public void initialization(@Optional("") String browserName) throws InterruptedException {
+		// If TestNG parameter is not provided, read from properties file
+		if (browserName == null || browserName.isEmpty()) {
+			browserName = prop.getProperty("Browser");
+		}
+
+		System.out.println("Browser selected: " + browserName);
 
 		HashMap<String, Object> chromePrefs = new HashMap<>();
 		chromePrefs.put("profile.default_content_settings.popups", 0);
@@ -106,10 +120,38 @@ public class TestBase {
 			driver.set(new FirefoxDriver());
 
 		} else if (browserName.equalsIgnoreCase("opera")) {
-			System.setProperty("webdriver.opera.driver", readconfig.getOperapath());
-			WebDriverManager.operadriver().setup();
-//			driver.set(new OperaDriver());
+//			System.setProperty("webdriver.opera.driver", readconfig.getOperapath());
+//			WebDriverManager.operadriver().setup();
+//			driver.set(new OperaDriver()); // opera work under Chrome
 
+//			WebDriverManager.chromedriver().setup();
+//			ChromeOptions options1 = new ChromeOptions();
+//			options1.setBinary("C:\\Users\\MADHU E\\AppData\\Local\\Programs\\Opera\\opera.exe"); 
+//			driver.set(new ChromeDriver(options1));
+
+			WebDriverManager.chromedriver().driverVersion("131.0.6778.266").setup(); // Setup ChromeDriver for Opera
+
+			ChromeOptions options1 = new ChromeOptions();
+			options1.setBinary("C:\\Users\\MADHU E\\AppData\\Local\\Programs\\Opera\\opera.exe"); // Set Opera binary
+																									// path
+			options1.addArguments("--start-maximized"); // Ensure full window opens
+
+			driver.set(new ChromeDriver(options1)); // Use ChromeDriver instead of OperaDriver
+			System.out.println("Opera Browser is launched.");
+
+		} else if (browserName.equalsIgnoreCase("brave")) {
+			System.setProperty("webdriver.chrome.driver", readconfig.getChromepath()); // Use ChromeDriver
+			WebDriverManager.chromedriver().setup();
+
+			ChromeOptions options1 = new ChromeOptions();
+			options1.setBinary(
+					"C:\\Users\\MADHU E\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"); // Set
+																													// path
+																													// to
+			// Brave
+
+			driver.set(new ChromeDriver(options1));
+			System.out.println("Brave Browser is launched.");
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			System.setProperty("webdriver.edge.driver", readconfig.getEdgePath());
 			WebDriverManager.edgedriver().setup();

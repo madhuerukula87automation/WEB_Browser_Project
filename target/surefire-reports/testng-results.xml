@@ -14,16 +14,23 @@
       <![CDATA[<B><font color = 'orange'>Sign In Button .</font></B> Clicked on Submit Button]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-02-13T18:01:17 IST" name="My_Demo_Frame_Work Naukari Suite" finished-at="2025-02-13T18:01:29 IST" duration-ms="11803">
+  <suite started-at="2025-02-14T15:44:01 IST" name="My_Demo_Frame_Work Naukari Suite" finished-at="2025-02-14T15:44:13 IST" duration-ms="12012">
     <groups>
     </groups>
-    <test started-at="2025-02-13T18:01:17 IST" name="Naukari_Web_App  Test Cases" finished-at="2025-02-13T18:01:29 IST" duration-ms="11803">
+    <test started-at="2025-02-14T15:44:01 IST" name="Naukari_Web_App  Test Cases" finished-at="2025-02-14T15:44:13 IST" duration-ms="12012">
       <class name="com.naukari.test_cases.user_side.Test_1_Naukari_Tests">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@36b4fe2a]" started-at="2025-02-13T18:01:17 IST" name="beforeSuite" finished-at="2025-02-13T18:01:17 IST" duration-ms="19" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@3943a2be]" started-at="2025-02-14T15:44:01 IST" name="beforeSuite" finished-at="2025-02-14T15:44:01 IST" duration-ms="18" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="initialization()[pri:0, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@36b4fe2a]" started-at="2025-02-13T18:01:17 IST" name="initialization" finished-at="2025-02-13T18:01:29 IST" duration-ms="11395" status="PASS">
+        <test-method is-config="true" signature="initialization(java.lang.String)[pri:0, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@3943a2be]" started-at="2025-02-14T15:44:01 IST" name="initialization" finished-at="2025-02-14T15:44:12 IST" duration-ms="10586" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
             <line>
               <![CDATA[<B><font color = 'orange'>Username .</font></B> Entered User ID]]>
@@ -39,15 +46,15 @@
             </line>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method signature="User_login()[pri:1, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@36b4fe2a]" started-at="2025-02-13T18:01:29 IST" name="User_login" finished-at="2025-02-13T18:01:29 IST" duration-ms="2" status="PASS">
+        <test-method signature="User_login()[pri:1, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@3943a2be]" started-at="2025-02-14T15:44:12 IST" name="User_login" finished-at="2025-02-14T15:44:12 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- User_login -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@36b4fe2a]" started-at="2025-02-13T18:01:29 IST" name="tearDown" finished-at="2025-02-13T18:01:29 IST" duration-ms="366" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@3943a2be]" started-at="2025-02-14T15:44:12 IST" name="tearDown" finished-at="2025-02-14T15:44:13 IST" duration-ms="1380" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=User_login status=SUCCESS method=Test_1_Naukari_Tests.User_login()[pri:1, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@36b4fe2a] output={null}]]]>
+                <![CDATA[[TestResult name=User_login status=SUCCESS method=Test_1_Naukari_Tests.User_login()[pri:1, instance:com.naukari.test_cases.user_side.Test_1_Naukari_Tests@3943a2be] output={null}]]]>
               </value>
             </param>
           </params>

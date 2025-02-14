@@ -19,7 +19,6 @@
 	<listeners>
 		<listener class-name="com.naukari_app.qa.util.TestStatusListener" />
 
-
 	</listeners>
 	 <test thread-count="5" name="Naukari_Web_App  Test Cases">
 		<classes>

@@ -46,7 +46,7 @@ public class ReadConfig {
 		return Password;
 	}
 
-	public static String getChromepath()
+	public  String getChromepath()
 
 	{
 		String chromepath = pro.getProperty("chromepath");
